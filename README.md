@@ -16,7 +16,7 @@ This repository contains a simple program demonstrating the core concept of Inve
 1. **Clone the Repository**  
    Open a terminal and run:
    ```bash
-   git clone https://github.com/Nainram/LearnSpring>.git
+   git clone https://github.com/Nainaram/LearnSpring>.git
 
 
 Navigate to the Project Directory

@@ -14,13 +14,14 @@ public class Main {
 		// the cpx ref and particular bean we want that object.
 		ClassPathXmlApplicationContext cpx = new ClassPathXmlApplicationContext("beans.xml");
 		Trainer jt = (JavaTrainer) cpx.getBean("jt");
-		Trainer st = (SqlTrainer)cpx.getBean("st"); 
-		Trainer wt = (WebTrainer)cpx.getBean("wt");
-		  
-		  System.out.println(jt.giveTask()); 
-		  System.out.println(st.giveTask());
-		  System.out.println(wt.giveTask());
-		 
+		Trainer st = (SqlTrainer) cpx.getBean("st");
+		Trainer wt = (WebTrainer) cpx.getBean("wt");
+
+		// in this code even the datavalues are passed by the factory itself.
+		System.out.println(jt.giveTask());
+		System.out.println(st.giveTask());
+		System.out.println(wt.giveTask());
+
 	}
 }
 

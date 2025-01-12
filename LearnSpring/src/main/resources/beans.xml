@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- if you are using the scope as the  prototype it is creating the everytime new object and give backed to the main method
-		  and by default it is using the singleton , means when your are asking for particular bean it is giving you only the same object or same bean.  -->
-    	<bean id ="jt" class = "com.ram.spring.model.JavaTrainer "></bean>
-    	<bean id ="st" class = "com.ram.spring.model.SqlTrainer"></bean>
-    	<bean id ="wt" class = "com.ram.spring.model.WebTrainer"></bean>
+	<context:component-scan base-package="com.ram.spring.model,com.ram.spring.practicetime"/>
 
 </beans>

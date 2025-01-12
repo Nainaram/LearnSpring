@@ -1,43 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- if you are using the scope as the prototype it is creating the everytime 
-		new object and give backed to the main method and by default it is using 
-		the singleton , means when your are asking for particular bean it is giving 
-		you only the same object or same bean. 
-		in this code even the datavalues are passed by the factory itself.
-		 by the property tag we have provided the values to the private members of the object with out actual procedure.-->
-		
-	<bean id="jt" class="com.ram.spring.model.JavaTrainer ">
-		<property name="name" value="Kshitij"></property>
-		<property name="message"
-			value="solve complex problems every day."></property>
-		<property name="jpt" ref="jpt"></property>
-	</bean>
-	<bean id="st" class="com.ram.spring.model.SqlTrainer">
-		<property name="name" value="blesina"></property>
-		<property name="message"
-			value=" practices complex queries every day."></property>
-		<property name="spt" ref="spt"></property>
-	</bean>
-	<bean id="wt" class="com.ram.spring.model.WebTrainer">
-		<property name="name" value="blesina"></property>
-		<property name="message"
-			value=" design responsive webpages everyday"></property>
-		<property name="wpt" ref="wpt"></property>
-	</bean>
-	<bean id="jpt"
-		class="com.ram.spring.practicetime.JavaPracticeTime">
-		<property name="time" value="2 hours"></property>
-	</bean>
-	<bean id="spt" class="com.ram.spring.practicetime.SqlPracticeTime">
-		<property name="time" value="1.5 hours"></property>
-	</bean>
-	<bean id="wpt" class="com.ram.spring.practicetime.WebPracticeTime">
-		<property name="time" value="1 hours"></property>
-	</bean>
+	<context:component-scan base-package="com.ram.spring.model,com.ram.spring.practicetime"/>
 
 </beans>

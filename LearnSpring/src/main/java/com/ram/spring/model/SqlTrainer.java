@@ -1,8 +1,14 @@
 package com.ram.spring.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import com.ram.spring.Interfaces.Trainer;
 import com.ram.spring.practicetime.SqlPracticeTime;
 
+@Component
 public class SqlTrainer implements Trainer {
 	// in this code you have not only passed the values to object from the beans.xml
 	// even you have passed directly object created
@@ -15,25 +21,25 @@ public class SqlTrainer implements Trainer {
 		return spt;
 	}
 
-	public void setSpt(SqlPracticeTime spt) {
-		this.spt = spt;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getMessage() {
 		return message;
 	}
 
-	public void setMessage(String message) {
+	
+	@Autowired
+	public SqlTrainer(@Qualifier("spt") SqlPracticeTime spt,  @Value("blessina") String name, @Value("practices complex queries everyday") String message) {
+		super();
+		this.spt = spt;
+		this.name = name;
 		this.message = message;
 	}
+
 
 	@Override
 	public String giveTask() {

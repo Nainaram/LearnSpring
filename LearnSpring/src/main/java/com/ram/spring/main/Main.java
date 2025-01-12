@@ -13,9 +13,9 @@ public class Main {
 		// this is the bean factory where the objects are stored and can used by calling
 		// the cpx ref and particular bean we want that object.
 		ClassPathXmlApplicationContext cpx = new ClassPathXmlApplicationContext("beans.xml");
-		Trainer jt = (JavaTrainer) cpx.getBean("jt");
-		Trainer st = (SqlTrainer) cpx.getBean("st");
-		Trainer wt = (WebTrainer) cpx.getBean("wt");
+		Trainer jt = (JavaTrainer) cpx.getBean("javaTrainer");
+		Trainer st = (SqlTrainer) cpx.getBean("sqlTrainer");
+		Trainer wt = (WebTrainer) cpx.getBean("webTrainer");
 
 		// in this code even the datavalues are passed by the factory itself.
 		System.out.println(jt.giveTask());
